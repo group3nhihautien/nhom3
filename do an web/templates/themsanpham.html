@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block body  %}
+<style>
+body {
+  background-image: url("https://wallpaperaccess.com/full/1190212.jpg");
+  background-size: cover;
+  background-position: center
+}
+</style>
+<div class="container">
+<div class ='jumbotron'>
+    <form action="/themsanpham" method="post" >
+          {{ form.csrf_token }}
+          <h2>
+                <div class ='form-group'>  
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Tên sản phẩm </span>
+                    </div>
+                    {{ form.tensanpham(size=40)}}
+                </div>
+           </h2>
+            <h2>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Giá </span>
+                    </div>
+                     <input type ='number' name ='gia' min = 10000 max=50000000 step="100000" value='1000000' >
+           
+                
+                <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Số lượng tồn </span>
+                    </div>
+                    <input type ='number' name ='gia' min = 1 max=1000 value='1' >
+            </h2>
+            <h2>
+                <div class="input-group mb-3">
+
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1" width = 300>Miêu tả</span>
+                        {{form.chitiet(size='500')}}
+                </div>
+            </h2>
+            <h2>
+            <div class="input-group mb-3">
+                <div> {{form.luachon.label}}
+                        {{form.luachon()}}
+                </div>
+            
+            </h2>
+            <h2>
+            <div class="input-group mb-3">
+                
+                    {{form.picture(size=100)}}
+              
+            </h2>
+            <h2><h2>
+                <div class="input-group mb-3">
+                {{form.submit()}}
+            </h2></h2>
+                                        
+                
+     </div>
+     
+  
+
+    <form>
+
+{% endblock body  %}

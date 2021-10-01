@@ -1,0 +1,64 @@
+
+{% extends "base.html" %}
+{% block body %}
+
+  <style>.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  
+}
+body {
+  background-image: url("https://wallpaperaccess.com/full/1190212.jpg");
+  background-size: cover;
+  background-position: center
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}</style>
+<div class="row">
+            
+            {% for image in images %}
+            
+                  <div class="card" id='card' style="width: 10rem;">
+                  <a> {{image[5]}} </a>
+                  <img alt="Card image cap" class="card-img-mid img-fluid" src={{ url_for('static', filename='images/'+image[0]) }} />
+                      <div class="card-block">
+                            
+                                <li> <a>Tên: {{image[1]}} </a> </li>
+                                <li> <a>Giá tiền: {{image[2]}} đ </a> </li>
+                               <li>  <a>Số lượng: {{image[3]}} </a> </li>
+                               <li>  <a>Thành tiền: {{image[4]}} đ </a> </li>
+                               <li>  <a>Ghi chú: {{image[6]}} </a> </li> 
+                         
+                      </div>
+              
+            </div>
+          {% endfor %}
+          <div >
+       
+           </div>
+        
+</div>
+ 
+
+{% endblock body %}

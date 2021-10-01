@@ -1,0 +1,72 @@
+
+{% extends "base.html" %}
+{% block body %}
+
+
+
+  <style>.card {
+  box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #010;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+   transition: margin-left 2s 0.5s ease-in-out;
+  -moz-transition: margin-left 2s 0.5s ease-in-out;
+  -webkit-transition: margin-left 2s 0.5s ease-in-out;
+}
+
+body {
+  background-image: url("https://wallpaperaccess.com/full/1190212.jpg");
+  background-size: cover;
+  background-position: center
+}
+.card button:hover {
+  opacity: 0.7;
+}
+
+</style>
+<h1>𝓧á𝓬 𝓷𝓱ậ𝓷 đơ𝓷 𝓱à𝓷𝓰 𝓽𝓱à𝓷𝓱 𝓬ô𝓷𝓰 </h1>  
+<div class="row">
+            {% for image in images %}
+             
+                  <div class="card" style="width: 17.34rem;"><img alt="Card image cap" class="card-img-mid img-fluid" src={{ url_for('static', filename='images/'+image[0]) }} />
+                      
+                      <div class="card-block">                                                                         
+                                <li> <a>Tên: {{image[1]}} </a> </li>
+                                <li> <a>Giá tiền: {{image[2]}} đ </a> </li>
+                                <li> <a>Số lượng: {{image[3]}} </a> </li>
+                                <li> <a>Thành tiền: {{image[4]}}đ </a> </li>
+                                <li> <a>Ngày xác nhận: {{image[5]}} </a> </li>
+
+                            </form>
+                      </div>
+              
+            </div>
+
+          {% endfor %}
+         
+          
+</div>
+
+<h1>Đơ𝓷 𝓱à𝓷𝓰 𝓼ẽ đượ𝓬 𝓰𝓲𝓪𝓸 𝓽𝓻𝓸𝓷𝓰 𝓽ố𝓲 đ𝓪 45 𝓹𝓱ú𝓽</h1>
+<h1>𝓗ã𝔂 𝓷𝓱ấ𝓬 𝓶á𝔂 𝓴𝓱𝓲 𝓬𝓱ú𝓷𝓰 𝓽ô𝓲 𝓰ọ𝓲 𝓷𝓱é!</h1>
+<h1> <a href='/giohang'> 𝓣𝓲ế𝓹 𝓽ụ𝓬 𝓶𝓾𝓪 𝓼ắ𝓶 </a></h1
+        
+{% endblock body %}

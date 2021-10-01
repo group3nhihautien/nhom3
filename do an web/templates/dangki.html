@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+body {
+  background-image: url("https://wallpaperaccess.com/full/1190212.jpg");
+  background-size: cover;
+  background-position: center
+}
+</style>
+    <div class="container">
+        <form action="" method="post" novalidate>
+         {% with messages= get_flashed_messages()%} 
+        {% if messages %}
+          {% for mess in messages %}
+                 <h1 >{{mess}}</h1>
+                          
+          {% endfor %}
+        
+        {% endif %}
+        {% endwith %}
+        {{ form.hidden_tag() }}
+        <h2>
+            {{ form.Hoten.label }}
+            {{ form.Hoten(size=32) }}
+        </h2>
+        <h2>
+            {{ form.diachi.label }}
+            {{ form.diachi(size=32) }}
+        </h2>
+        <h2>
+            {{ form.sdt.label }}
+            {{ form.sdt(size=32) }}
+        </h2>
+         <h2>
+            {{ form.matkhau.label }}
+            {{ form.matkhau(size=32) }}
+        </h2>
+         <h2>
+            {{ form.confirm.label }}
+            {{ form.confirm (size=32) }}
+        </h2>
+        
+        <h2>{{ form.submit() }}</h2>
+       
+    </form>  
+    </div>
+
+{% endblock body %}

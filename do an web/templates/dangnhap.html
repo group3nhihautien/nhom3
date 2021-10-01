@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body  %}
+<style>
+body {
+  background-image: url("https://wallpaperaccess.com/full/1190212.jpg");
+  background-size: cover;
+  background-position: center
+}
+</style>
+ <div class="container">
+ 
+   <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <h2>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+        </h2>
+        <h2>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </h2>
+       
+        <h2>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <h2>{{ form.submit() }}  hoặc
+        
+            <a href='/dangki' > Đăng kí </a> 
+        
+        
+        </p>
+       
+    
+    </form>  
+
+
+{% endblock body  %}

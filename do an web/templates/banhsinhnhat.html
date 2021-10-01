@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+{% block body %}
+  <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+     
+        <div class="container">
+        <div class ='jumbotron'>
+    <div class="row">
+
+  
+            {% for image in images %}
+           
+             
+                  <div class="card" style="width: 250px; height: 150px;"><img alt="Card image cap" class="card-img-mid img-fluid" src={{ url_for('static', filename='images/'+image[1]) }}  />
+                      
+                      <div class="card-block">
+                    
+                              <form action="/giohang" method="GET" >
+                               
+                                <li> <a>Tên: {{image[2]}} </a> </li>
+                                <li> <a>Giá tiền: {{image[3]}} đ </a> </li>
+                                <li> <a>Chi tiết: {{image[4]}} </a> </li>
+                                 <li> <a>From: {{image[5]}} </a> </li>
+                                <button name="btn" class= "btn-outline-success" onclick="alert('Thêm sản phẩm {{image[2]}} thành công')" 
+                               value = {{image[0]}} >𝓣𝓱ê𝓶 𝓿à𝓸 𝓰𝓲ỏ 𝓱à𝓷𝓰</button>
+                                                 
+
+                            </form>
+                      </div>
+              
+            </div>
+          {% endfor %}
+        
+</div>
+<style>.card {
+  box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #010;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+   transition: margin-left 2s 0.5s ease-in-out;
+  -moz-transition: margin-left 2s 0.5s ease-in-out;
+  -webkit-transition: margin-left 2s 0.5s ease-in-out;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+</style>
+
+{% endblock body %}
